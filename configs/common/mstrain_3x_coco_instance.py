@@ -46,17 +46,17 @@ data = dict(
         times=3,
         dataset=dict(
             type=dataset_type,
-            ann_file=data_root + "train.json"
+            ann_file=data_root + "train.json",
             img_prefix=data_root + 'train2017/',
             pipeline=train_pipeline)),
     val=dict(
         type=dataset_type,
-        ann_file=ann_file=data_root + "valid.json"
+        ann_file=ann_file=data_root + "valid.json",
         img_prefix=data_root + 'val2017/',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
-        ann_file=data_root + "test.json"
+        ann_file=data_root + "test.json",
         img_prefix=data_root + 'val2017/',
         pipeline=test_pipeline))
 evaluation = dict(interval=1, metric=['bbox', 'segm'])
