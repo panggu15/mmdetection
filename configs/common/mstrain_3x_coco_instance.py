@@ -51,7 +51,7 @@ data = dict(
             pipeline=train_pipeline)),
     val=dict(
         type=dataset_type,
-        ann_file=ann_file=data_root + "valid.json",
+        ann_file=data_root + "valid.json",
         img_prefix=data_root + "train/",
         pipeline=test_pipeline),
     test=dict(
