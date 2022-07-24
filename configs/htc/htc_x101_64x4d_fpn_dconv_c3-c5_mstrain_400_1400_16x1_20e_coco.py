@@ -36,8 +36,16 @@ train_pipeline = [
         type='Collect',
         keys=['img', 'gt_bboxes', 'gt_labels', 'gt_masks', 'gt_semantic_seg']),
 ]
+# data = dict(
+#     samples_per_gpu=1, workers_per_gpu=1, train=dict(pipeline=train_pipeline))
 data = dict(
-    samples_per_gpu=1, workers_per_gpu=1, train=dict(pipeline=train_pipeline))
+    samples_per_gpu=1,
+    workers_per_gpu=1,
+    train=dict(
+        type='CocoDataset',
+        ann_file=data/dataset/ + 'train.json',
+        img_prefix=data/dataset/ + 'train/',
+        pipeline=train_pipeline)
 # learning policy
 lr_config = dict(step=[16, 19])
 runner = dict(type='EpochBasedRunner', max_epochs=20)
