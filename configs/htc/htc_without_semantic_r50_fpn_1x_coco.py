@@ -220,7 +220,8 @@ img_norm_cfg = dict(
 test_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(
-        type='MultiScaleFlipAug',
+#         type='MultiScaleFlipAug',
+        type='AutoAugment',
         img_scale=(1333, 800),
         flip=False,
         transforms=[
