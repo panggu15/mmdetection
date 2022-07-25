@@ -50,7 +50,7 @@ test_pipeline = [
 ]
 data = dict(
     train=dict(
-#         seg_prefix=data_root + 'train/',
+        seg_prefix=data_root + 'train/',
         pipeline=train_pipeline),
     val=dict(pipeline=test_pipeline),
     test=dict(pipeline=test_pipeline))
