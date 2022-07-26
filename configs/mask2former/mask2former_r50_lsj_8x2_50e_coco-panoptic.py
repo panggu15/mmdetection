@@ -1,9 +1,10 @@
 _base_ = [
     '../_base_/datasets/coco_panoptic.py', '../_base_/default_runtime.py'
 ]
-num_things_classes = 80
-num_stuff_classes = 53
-num_classes = num_things_classes + num_stuff_classes
+num_things_classes = 1
+num_stuff_classes = 1
+# num_classes = num_things_classes + num_stuff_classes
+num_classes = 1
 model = dict(
     type='Mask2Former',
     backbone=dict(
